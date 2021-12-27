@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const authRoute = require('./routes/auth.route.js')
 const userRoute = require('./routes/users.route.js')
+const movieRoute = require('./routes/movies.route.js')
+
+const port = 4000;
 
 dotenv.config()
 
@@ -19,8 +22,8 @@ app.use(express.json())
 
 app.use('/api/auth', authRoute)
 app.use('/api/users', userRoute)
+app.use('/api/movies', movieRoute)
 
-const port = 4000;
 
 
 app.listen(port, () => {
